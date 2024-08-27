@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ecommercejs</title>
+</head>
+
+
+<body>
+
+    <main>
+        <div id="carrinhoimg">
+            <a href="http://127.0.0.1:5500/carrinho.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="valuecart">0</span>
+            </a>
+
+        </div>
+
+        <div id="container"></div>
+        <div id="item">
+            <label for="product">Produto:</label>
+            <input type="text" id="product" name="camiseta" value="camiseta" readonly><br>
+            <img class="img" src="https://cdn.awsli.com.br/1960/1960866/produto/125390796/a12dd9ac46.jpg"
+                alt="camiseta">
+            <p>Camiseta curta da cor vermelha</p>
+            <label for="amount">valor:</label>
+            <input id="amount" type="text" value="110.99" readonly>
+            <select name="quantidade" id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            <select name="tamanho" id="size">
+                <option value="P">P</option>
+                <option value="M">M</option>
+            </select>
+            <br>
+            <br>
+            <button id="button" type="button" name="btn0">Adicionar ao Carrinho</button>
+        </div>
+        <br><br><br>
+
+        <div id="item">
+            <label for="product">Produto:</label>
+            <input type="text" id="product" name="bermuda" value="bermuda" readonly><br>
+            <img class="img"
+                src="https://images.tcdn.com.br/img/img_prod/652999/bermuda_sarja_swarm_cargo_preta_com_costura_branca_5423_2_6b7fc5d11ab6e1ce7246fd821bf3a3f0.jpg"
+                alt="bermuda">
+            <p>Bermuda curta da cor verde</p>
+            <label for="amount">valor:</label>
+            <input id="amount" type="text" value="150.53" readonly>
+            <select name="quantidade" id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <br>
+            <br>
+            <button id="button" type="button" name="btn1">Adicionar ao Carrinho</button>
+        </div>
+    </main>
+
+
+    <script src="/src/scripts/home.js" type="module"></script>
+
+
+
+</body>
+
+
+</html>
