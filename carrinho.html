@@ -59,15 +59,16 @@
             <label for="country_name">País:</label>
             <input type="text" id="country_name" name="country_name"><br><br>
 
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(XX) XXXXX-XXXX"><br><br>
+
             <button id="btn" type="submit">Comprar</button>
         </form>
     </div>
 
-
-
-    <script src="/src/scripts/carrinho.js" type="module"></script>
-    <script src="/src/scripts/user.js" type="module"></script>
-    <script src="/src/scripts/script.js" type="module"></script>
+    <script src="/src/scripts/cart/cart.js" type="module"></script>
+    <script src="/src/scripts/payment/validatesData.js" type="module"></script>
+    <script src="/src/scripts/payment/createPayment.js" type="module"></script>
 
 
 </body>

@@ -1,4 +1,5 @@
-import { getFormDataUser } from "./user.js";
+import { getFormDataUser } from "./validatesData.js";
+const container = document.getElementById("carrinho");
 
 const form = document.getElementById("checkout-form");
 
@@ -14,12 +15,16 @@ form.addEventListener("submit", (event) => {
   const amounts = [...document.querySelectorAll("#amount")];
   const products = [...document.querySelectorAll("#product")];
   const quantitys = [...document.querySelectorAll("#quantity")];
+  const sizes = [...document.querySelectorAll("#size")];
+  const descriptions = [...document.querySelectorAll("#description")];
 
   let objetoItens = products.map((product, index) => {
     return {
       product: product.value,
       amount: amounts[index].value,
       quantity: quantitys[index].value,
+      description: descriptions[index].value,
+      size: sizes[index].value,
     };
   });
 
@@ -51,6 +56,8 @@ async function fetchDate(data) {
     }
 
     const result = await fetchDate.json();
+    container.innerText = "";
+    localStorage.removeItem("product");
 
     // Redireciona para o link fornecido pela resposta
     window.location.href = result.init_point;

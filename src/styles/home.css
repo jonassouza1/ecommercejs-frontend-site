@@ -2,6 +2,6 @@
     width: 80px;
 }
 
-select {
+.notrender {
     display: none;
 }

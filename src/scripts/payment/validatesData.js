@@ -2,6 +2,7 @@ export function getFormDataUser() {
   // Obtém e limpa os valores dos campos do formulário
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
   const address = document.getElementById("address").value.trim();
   const street_number =
     document.getElementById("street_number").value.trim() || null;
@@ -16,12 +17,14 @@ export function getFormDataUser() {
   // Expressões regulares para validação
   const nameRegex = /^[a-zA-Z\s]+$/; // Nome pode conter apenas letras e espaços
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validação básica de e-mail
+  const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/; // Formato brasileiro com DDD: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX
   const zipRegex = /^\d{5}-\d{3}$/; // Exemplo de validação para CEP no formato XXXXX-XXX
 
   // Verifica se os campos obrigatórios estão preenchidos
   if (
     !name ||
     !email ||
+    !phone ||
     !address ||
     !street_number ||
     !city ||
@@ -43,6 +46,11 @@ export function getFormDataUser() {
     alert("Por favor, insira um e-mail válido.");
     return null;
   }
+  // Valida o número de telefone
+  if (!phoneRegex.test(phone)) {
+    alert("Por favor, insira um número de telefone válido.");
+    return null;
+  }
 
   // Valida o CEP
   if (!zipRegex.test(zip)) {
@@ -61,6 +69,7 @@ export function getFormDataUser() {
   return {
     name,
     email,
+    phone,
     address,
     street_number: streetNumberValue,
     floor,
