@@ -20,11 +20,11 @@ form.addEventListener("submit", (event) => {
 
   let objetoItens = products.map((product, index) => {
     return {
-      product: product.value,
-      amount: amounts[index].value,
-      quantity: quantitys[index].value,
-      description: descriptions[index].value,
-      size: sizes[index].value,
+      product: product.textContent,
+      amount: Number(amounts[index].textContent),
+      quantity: Number(quantitys[index].value),
+      description: descriptions[index].textContent,
+      size: sizes[index].textContent,
     };
   });
 
@@ -37,7 +37,7 @@ form.addEventListener("submit", (event) => {
     items: objetoItens,
     formData, // Adiciona os dados do formulário ao objeto de dados
   };
-
+  console.log(data);
   fetchDate(data);
 });
 
