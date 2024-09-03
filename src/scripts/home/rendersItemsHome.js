@@ -1,4 +1,7 @@
 import { initHomeLogic } from "./addItemsCart.js";
+const baseUrl =
+  "https://ecommercejs-backend-site.vercel.app/products" ||
+  "http://localhost:5501/products";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("container");
@@ -9,9 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const queryParams = categoryName
       ? `?category_name=${encodeURIComponent(categoryName)}`
       : "";
-    const response = await fetch(
-      `http://localhost:5501/products${queryParams}`
-    );
+    const response = await fetch(`${baseUrl}${queryParams}`);
     const data = await response.json();
     const products = data.products;
 

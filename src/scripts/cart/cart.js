@@ -1,9 +1,11 @@
 const divContainer = document.getElementById("carrinho");
+let baseUrl =
+  "https://ecommercejs-backend-site.vercel.app/products" ||
+  "http://localhost:5501/products";
 
+baseUrl.trim();
 async function fetchProductData(name) {
-  const response = await fetch(
-    `http://localhost:5501/products/${encodeURIComponent(name)}`
-  );
+  const response = await fetch(`${baseUrl}/${encodeURIComponent(name)}`);
 
   if (response.ok) {
     const data = await response.json();

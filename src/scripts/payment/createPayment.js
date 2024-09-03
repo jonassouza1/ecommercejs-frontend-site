@@ -1,7 +1,10 @@
 import { getFormDataUser } from "./validatesData.js";
 const container = document.getElementById("carrinho");
-
 const form = document.getElementById("checkout-form");
+
+const baseUrl =
+  "https://ecommercejs-backend-site.vercel.app/createpayment" ||
+  "http://localhost:5501/createpayment";
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // Previne o envio automático do formulário
@@ -43,7 +46,7 @@ form.addEventListener("submit", (event) => {
 
 async function fetchDate(data) {
   try {
-    const fetchDate = await fetch("http://localhost:5501/createpayment", {
+    const fetchDate = await fetch(`${baseUrl}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
