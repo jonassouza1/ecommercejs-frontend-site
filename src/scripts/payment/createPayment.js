@@ -3,7 +3,7 @@ const container = document.getElementById("carrinho");
 const form = document.getElementById("checkout-form");
 
 const baseUrl =
-  "https://ecommercejs-backend-site.vercel.app/createpayment" ||
+  "https://ecommercejs-backend-site.onrender.com/createpayment" ||
   "http://localhost:5501/createpayment";
 
 form.addEventListener("submit", (event) => {

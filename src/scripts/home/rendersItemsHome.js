@@ -1,6 +1,6 @@
 import { initHomeLogic } from "./addItemsCart.js";
 const baseUrl =
-  "https://ecommercejs-backend-site.vercel.app/products" ||
+  "https://ecommercejs-backend-site.onrender.com/products" ||
   "http://localhost:5501/products";
 
 document.addEventListener("DOMContentLoaded", async () => {

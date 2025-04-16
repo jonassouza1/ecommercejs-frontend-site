@@ -1,6 +1,6 @@
 const divContainer = document.getElementById("carrinho");
 let baseUrl =
-  "https://ecommercejs-backend-site.vercel.app/products" ||
+  "https://ecommercejs-backend-site.onrender.com/products" ||
   "http://localhost:5501/products";
 
 baseUrl.trim();
