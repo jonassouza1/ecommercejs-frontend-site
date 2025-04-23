@@ -27,27 +27,31 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Gera as opções de quantidade dinamicamente
 
       // Preenche o HTML com os dados do produto, incluindo as opções dinâmicas
+      itemDiv.className = "col-md-4 col-lg-3 mb-4";
+      itemDiv.id = "item"; // precisa ter esse ID pro script funcionar
+
       itemDiv.innerHTML = `
-     <div>
-        <img class="img" src="${product.image_url}" alt="${product.name}">
-      </div>
-      <div>
-        <strong>Nome:</strong> <span id="product">  ${product.name} </span>
-      </div>
-      <div>
-        <strong>Descrição:</strong> <span id="description">  ${product.description} </span>
-      </div>
-      <div>
-        <strong>Valor:</strong> <span id="amount">  ${product.price} </span>
-      </div>
-      <div>
-        <strong>Tamanho:</strong> <span id="size">  ${product.size_name} </span>
-      </div>
-      <div>
-        <button id="button" type="button" name="btn${product.id}">Adicionar ao Carrinho</button>
-      </div>
-            
-          `;
+        <div class="card h-100 shadow-sm">
+          <img src="${product.image_url}" class="card-img-top" alt="${product.name}" style="object-fit: contain; width: 100%; height: 250px;">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">
+              Nome: <span id="product">${product.name}</span>
+            </h5>
+            <p class="card-text text-muted">
+              Descrição: <span id="description">${product.description}</span>
+            </p>
+            <p class="mb-1">
+              <strong>Valor:</strong> R$ <span id="amount">${product.price}</span>
+            </p>
+            <p class="mb-3">
+              <strong>Tamanho:</strong> <span id="size">${product.size_name}</span>
+            </p>
+            <button class="btn btn-primary mt-auto" id="button" type="button" name="btn${product.id}">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+      `;
 
       container.appendChild(itemDiv);
       initHomeLogic();

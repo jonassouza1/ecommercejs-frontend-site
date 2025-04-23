@@ -29,6 +29,7 @@ function getNameProduct() {
 function renderCart(products) {
   products.map((product) => {
     const itemDiv = document.createElement("div");
+    itemDiv.className = "col-md-6 col-lg-4";
     itemDiv.id = "item";
 
     let quantityOptions = "";
@@ -36,33 +37,28 @@ function renderCart(products) {
       quantityOptions += `<option value="${i}">${i}</option>`;
     }
 
-    itemDiv.innerHTML = `   
-      <div>
-        <img class="img" src="${product.image_url}" alt="${product.name}">
-      </div>
-      <div>
-        <strong>Nome:</strong> <span id="product">  ${product.name} </span>
-      </div>
-      <div>
-        <strong>Descrição:</strong> <span id="description">  ${product.description} </span>
-      </div>
-      <div>
-        <strong>Valor:</strong> <span id="amount">  ${product.price} </span>
-      </div>
-      <label><strong>Quantidade:</strong></label>
-      <select name="quantidade" id="quantity" >
-              ${quantityOptions}
-      </select>
-      <div>
-        <strong>Tamanho:</strong> <span id="size">  ${product.size_name} </span>
-      </div>
-      <div>
-        <button class="btnremove" id="btnr" type="button">Remover Item do Carrinho</button>
+    itemDiv.innerHTML = `
+      <div class="card h-100 shadow-sm">
+        <img src="${product.image_url}" class="card-img-top" style="object-fit: contain; height: 200px; width: 100%;" alt="${product.name}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><span id="product">${product.name}</span></h5>
+          <p class="card-text"><strong>Descrição:</strong> <span id="description">${product.description}</span></p>
+          <p class="card-text"><strong>Valor:</strong> R$ <span id="amount">${product.price}</span></p>
+          <p class="card-text"><strong>Tamanho:</strong> <span id="size">${product.size_name}</span></p>
+
+          <div class="mb-3">
+            <label for="quantity" class="form-label"><strong>Quantidade:</strong></label>
+            <select id="quantity" class="form-select">${quantityOptions}</select>
+          </div>
+
+          <button class="btn btn-danger mt-auto" id="btnr" type="button">Remover Item do Carrinho</button>
+        </div>
       </div>
     `;
 
     divContainer.appendChild(itemDiv);
   });
+
   deleteItens();
 }
 
