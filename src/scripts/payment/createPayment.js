@@ -40,7 +40,7 @@ form.addEventListener("submit", (event) => {
     items: objetoItens,
     formData, // Adiciona os dados do formulário ao objeto de dados
   };
-  console.log(data);
+
   fetchDate(data);
 });
 
