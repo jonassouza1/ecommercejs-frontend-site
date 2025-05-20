@@ -1,4 +1,5 @@
 # 🛒 E-commerce Frontend — HTML, JavaScript & Bootstrap
+[<img src="./ecommerce-front.gif" >]
 
 A complete e-commerce frontend built **from scratch** using **HTML5**, **vanilla JavaScript**, and **Bootstrap (via CDN)**. The focus is on accessibility, responsiveness, and user experience, with **client-side form validation** and **full backend integration**.
 
